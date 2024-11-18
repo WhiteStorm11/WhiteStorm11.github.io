@@ -20,7 +20,36 @@
         <a-box id="cash-register" position="0 1.2 -3" depth="1.5" height="0.5" width="2" color="#555"></a-box>
 
         <!-- Gaveta de la Caja -->
-        <a-box id="drawer" position="0 0.95 -3" depth="1.5" height="0.2" width="2" color="#666"></a-box>
+        <a-box id="drawer" position="0 0.95 -3" depth="1.5" height="0.2" width="2" color="#666">
+            <!-- Billetes dentro de la gaveta -->
+            <a-entity>
+                <!-- Billete Verde -->
+                <a-box position="-0.4 0.14 0.5" width="0.3" height="0.02" depth="0.6" color="green"></a-box>
+                <a-text value="$10" position="-0.4 0.17 0.5" align="center" color="#FFF" width="1"></a-text>
+
+                <!-- Billete Azul -->
+                <a-box position="0 0.14 0.5" width="0.3" height="0.02" depth="0.6" color="blue"></a-box>
+                <a-text value="$20" position="0 0.17 0.5" align="center" color="#FFF" width="1"></a-text>
+
+                <!-- Billete Rojo -->
+                <a-box position="0.4 0.14 0.5" width="0.3" height="0.02" depth="0.6" color="red"></a-box>
+                <a-text value="$50" position="0.4 0.17 0.5" align="center" color="#FFF" width="1"></a-text>
+
+                <!-- Monedas al lado del billete rojo -->
+                <a-cylinder position="0.7 0.16 0.7" radius="0.05" height="0.02" color="gold"></a-cylinder>
+                <a-cylinder position="0.7 0.17 0.6" radius="0.05" height="0.02" color="silver"></a-cylinder>
+                <a-cylinder position="0.7 0.18 0.6" radius="0.05" height="0.02" color="gold"></a-cylinder>
+                <a-cylinder position="0.7 0.19 0.52" radius="0.05" height="0.02" color="silver"></a-cylinder>
+                <a-cylinder position="0.7 0.2 0.48" radius="0.05" height="0.02" color="gold"></a-cylinder>
+
+                <a-cylinder position="-1.2 1.2 -2.4" radius="0.07" height="0.02" color="gold"></a-cylinder>
+
+
+
+
+            </a-entity>
+
+        </a-box>
 
         <!-- Monitor de la Caja Registradora -->
         <a-box id="monitor-frame" position="0 1.9 -3" depth="0.1" height="0.8" width="1.5" color="#333"></a-box>
@@ -80,17 +109,24 @@
         <!-- Techo de cielo raso blanco -->
         <a-plane position="0 3 -5" rotation="-90 0 0" width="10" height="10" color="#FFFFFF"></a-plane>
 
-        <!-- Abanico en la parte derecha con hélices redondeadas y animación de rotación -->
-        <a-entity position="4 2.5 -3">
-            <a-cylinder radius="0.1" height="0.4" color="#555"></a-cylinder> <!-- Soporte del abanico -->
-            <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 2000" position="0 0.5 0">
-                <a-sphere radius="0.02" position="0 0 0" color="#888"></a-sphere> <!-- Centro del abanico -->
-                <a-circle radius="0.15" color="#888" position="0 0 0.2"></a-circle> <!-- Hélice redondeada 1 -->
-                <a-circle radius="0.15" color="#888" position="0 0 -0.2" rotation="0 0 90"></a-circle> <!-- Hélice redondeada 2 -->
-                <a-circle radius="0.15" color="#888" position="0.2 0 0" rotation="90 0 0"></a-circle> <!-- Hélice redondeada 3 -->
-                <a-circle radius="0.15" color="#888" position="-0.2 0 0" rotation="90 0 0"></a-circle> <!-- Hélice redondeada 4 -->
-                <a-circle radius="0.15" color="#888" position="0.14 0 0.14" rotation="45 0 0"></a-circle> <!-- Hélice redondeada 5 -->
-                <a-circle radius="0.15" color="#888" position="-0.14 0 -0.14" rotation="45 0 0"></a-circle> <!-- Hélice redondeada 6 -->
+        <!-- Abanico delante a la derecha de la mesa -->
+        <a-entity id="fan" position="1.5 0.8 -2">
+            <!-- Base del abanico -->
+            <a-box position="0 0 -0.1" width="0.5" height="0.1" depth="0.3" color="yellow"></a-box>
+            <!-- Botón del abanico -->
+            <a-box id="fan-button" position="0.2 0.05 -0.1" width="0.05" height="0.05" depth="0.05" color="red" class="raycastable"></a-box>
+            <!-- Soporte del abanico -->
+            <a-cylinder position="0 0.3 0" radius="0.05" height="0.4" color="blue"></a-cylinder>
+            <!-- Hélices del abanico -->
+            <a-entity id="fan-blades" position="0 0.6 0" rotation="0 0 0">
+                <a-sphere radius="0.1" color="blue"></a-sphere> <!-- Centro -->
+                <!-- Hélice 1 -->
+                <a-circle radius="0.2" position="0.3 -0.1 0" rotation="0 0 0" color="yellow"></a-circle>
+                <!-- Hélice 2 -->
+                <a-circle radius="0.2" position="-0.3 -0.1 0" rotation="0 0 120" color="yellow"></a-circle>
+                <!-- Hélice 3 -->
+                <a-circle radius="0.2" position="0 0.3 0" rotation="0 0 -120" color="yellow"></a-circle>
+
             </a-entity>
         </a-entity>
 
@@ -105,3 +141,4 @@
     </a-scene>
 </body>
 </html>
+
