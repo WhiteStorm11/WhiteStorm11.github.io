@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: #fff;
+}
+
+#monitor-frame, #monitor-screen, #drawer, #cash-register, #button-red, #button-green, #pay-button {
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+a-text {
+    font-weight: bold;
+}
